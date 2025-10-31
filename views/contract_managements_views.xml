@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!--Views-->
+
+    <record id="contract_provider_view_tree" model="ir.ui.view">
+        <field name="name">provider.information.tree</field>
+        <field name="model">provider.information</field>
+        <field name="arch" type="xml">
+            <tree string="Channel">
+                <field name="name" />
+                <field name="rate_ids" />
+                <field name="comment_ids" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_rate_view_tree" model="ir.ui.view">
+        <field name="name">rate.information.tree</field>
+        <field name="model">rate.information</field>
+        <field name="arch" type="xml">
+            <tree string="Rate">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_comments_view_tree" model="ir.ui.view">
+        <field name="name">comments.information.tree</field>
+        <field name="model">comments.information</field>
+        <field name="arch" type="xml">
+            <tree string="Comments">
+                <field name="name" />
+                <field name="commented_by" />
+                <field name="commented_date" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_type_comments_view_tree" model="ir.ui.view">
+        <field name="name">contract_type.information.tree</field>
+        <field name="model">contract_type.information</field>
+        <field name="arch" type="xml">
+            <tree string="Contract Type">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="contract_departments_view_tree" model="ir.ui.view">
+        <field name="name">departments.information.tree</field>
+        <field name="model">departments.information</field>
+        <field name="arch" type="xml">
+            <tree string="Departments">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Forms -->
+
+    <record id="contract_provider_form_view" model="ir.ui.view">
+        <field name="name">provider.information.form</field>
+        <field name="model">provider.information</field>
+        <field name="arch" type="xml">
+            <form string="Provider">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="rate_ids" />
+                        <field name="comment_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_rate_form_view" model="ir.ui.view">
+        <field name="name">rate.information.form</field>
+        <field name="model">rate.information</field>
+        <field name="arch" type="xml">
+            <form string="Provider">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_comments_form_view" model="ir.ui.view">
+        <field name="name">comments.information.form</field>
+        <field name="model">comments.information</field>
+        <field name="arch" type="xml">
+            <form string="Comments">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="commented_by"/>
+                        <field name="provider_id" invisible="1"/>
+                        <field name="commented_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_type_comments_form_view" model="ir.ui.view">
+        <field name="name">contract_type.information.form</field>
+        <field name="model">contract_type.information</field>
+        <field name="arch" type="xml">
+            <form string="Comments">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="contract_departments_form_view" model="ir.ui.view">
+        <field name="name">departments.information.form</field>
+        <field name="model">departments.information</field>
+        <field name="arch" type="xml">
+            <form string="Departments">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Actions-->
+
+    <record id="contract_provider_action" model="ir.actions.act_window">
+        <field name="name">Providers</field>
+        <field name="res_model">provider.information</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Manage Providers for Contracts here.
+            </p>
+        </field>
+    </record>
+
+    <record id="contract_rate_action" model="ir.actions.act_window">
+        <field name="name">Rate</field>
+        <field name="res_model">rate.information</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Manage Rate for Contracts here.
+            </p>
+        </field>
+    </record>
+
+    <record id="contract_type_action" model="ir.actions.act_window">
+        <field name="name">Contract Type</field>
+        <field name="res_model">contract_type.information</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Manage Contract Type for Contracts here.
+            </p>
+        </field>
+    </record>
+
+    <record id="contract_departments_action" model="ir.actions.act_window">
+        <field name="name">Departments</field>
+        <field name="res_model">departments.information</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Manage Departments for Contracts here.
+            </p>
+        </field>
+    </record>
+
+
+</odoo>

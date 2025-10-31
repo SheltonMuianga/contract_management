@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem id="main_menu_contract_management" name="Contract Management"
+            />
+        
+        <menuitem id="menu_contract_lead" name="Leads" parent="main_menu_contract_management" sequence="1"/>
+        
+        <menuitem id="menu_contracts_information"
+            name="Contracts"
+            parent="main_menu_contract_management"
+            action="insurance_information_action"
+            groups="contract_management.contract_manager,contract_management.contract_user"
+            sequence="2"/>
+
+        <menuitem id="menu_managements_contract"
+            name="Managements"
+            parent="main_menu_contract_management"
+            groups="contract_management.contract_manager"
+            sequence="3"/>
+        
+
+        <menuitem id="menu_provider_information"
+            name="Providers"
+            parent="menu_managements_contract"
+            action="contract_provider_action"
+            groups="contract_management.contract_manager"
+            sequence="4"/>
+
+        <menuitem id="menu_rate_information"
+            name="Rate"
+            parent="menu_managements_contract"
+            action="contract_rate_action"
+            groups="contract_management.contract_manager"
+            sequence="5"/>
+
+        <menuitem id="menu_contract_type_information"
+            name="Contract Type"
+            parent="menu_managements_contract"
+            action="contract_type_action"
+            groups="contract_management.contract_manager"
+            sequence="6"/>
+        
+        <menuitem id="menu_departments_information"
+            name="Departments"  
+            parent="menu_managements_contract"
+            action="contract_departments_action"
+            groups="contract_management.contract_manager"
+            sequence="7"/>
+
+        <menuitem id="menu_settings_contract"
+            name="Contract Settings"
+            parent="main_menu_contract_management"
+            groups="contract_management.contract_manager"
+            sequence="4"/>
+        
+        <menuitem
+            id="menu_users_contract"
+            name="Users"
+            action="base.action_res_users"
+            parent="menu_settings_contract"
+            groups="contract_management.contract_manager"
+            sequence="5" />
+        <menuitem 
+            id="menu_groups_contract"
+            name="User Groups"
+            action="base.action_res_groups"
+            parent="menu_settings_contract"
+            groups="contract_management.contract_manager"
+            sequence="6" />
+    </data>
+</odoo>
